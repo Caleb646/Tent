@@ -1,6 +1,6 @@
 #pragma once
 
-namespace ecs
+namespace tent
 {
 	namespace _internal
 	{
@@ -23,7 +23,7 @@ namespace ecs
 	}
 
 	template<typename Component>
-	std::size_t TypeIndex = _internal::TypeData<Component>::value();
+	std::size_t TypeIndex_v = _internal::TypeData<Component>::value();
 
 
 

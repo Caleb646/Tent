@@ -19,16 +19,26 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="Registry.h" />
-    <ClInclude Include="SparseSet.h" />
-    <ClInclude Include="ComponentStorage.h" />
-    <ClInclude Include="StorageIterator.h" />
-    <ClInclude Include="Types.h" />
-    <ClInclude Include="View.h" />
+    <ClInclude Include="src\Entity.h" />
+    <ClInclude Include="src\Registry.h" />
+    <ClInclude Include="src\SparseSet.h" />
+    <ClInclude Include="src\ComponentStorage.h" />
+    <ClInclude Include="src\StorageIterator.h" />
+    <ClInclude Include="src\Types.h" />
+    <ClInclude Include="src\View.h" />
+    <ClInclude Include="Tent.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include=".gitmodules" />
+    <None Include="AddSubMods.bat" />
+    <None Include="UpdateSubMods.bat">
+      <FileType>Script</FileType>
+    </None>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -39,7 +49,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -100,6 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)deps\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

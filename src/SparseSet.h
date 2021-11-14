@@ -1,10 +1,11 @@
 #pragma once
 #include <vector>
-#include <Log.h>
+#include <Logi/Logi.h>
 
 #include "Entity.h"
 
-namespace ecs {
+namespace tent
+{
 
 	template<typename E, typename Container = std::vector<E>>
 	class SparseSet

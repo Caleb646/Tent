@@ -1,7 +1,7 @@
 #pragma once
-//#include <cstdint>
+#include <cstdint>
 
-namespace ecs
+namespace tent
 {
 	constexpr uint32_t MAX_INDEX_BITS { 22 };
 	constexpr uint32_t INDEX_MASK { (1 << MAX_INDEX_BITS) - 1 };
@@ -48,11 +48,11 @@ namespace ecs
 namespace std
 {
 	template<>
-	struct hash<ecs::Entity>
+	struct hash<tent::Entity>
 	{
-		std::size_t operator()(const ecs::Entity& e) const
+		std::size_t operator()(const tent::Entity& e) const
 		{
-			return hash<ecs::ENTITY_TYPE>()((ecs::ENTITY_TYPE)e);
+			return hash<tent::ENTITY_TYPE>()((tent::ENTITY_TYPE)e);
 		}
 	};
 }

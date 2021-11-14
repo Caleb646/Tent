@@ -15,31 +15,43 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Entity.h">
+    <ClInclude Include="src\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Registry.h">
+    <ClInclude Include="src\Registry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SparseSet.h">
+    <ClInclude Include="src\SparseSet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Types.h">
+    <ClInclude Include="src\Types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ComponentStorage.h">
+    <ClInclude Include="src\ComponentStorage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StorageIterator.h">
+    <ClInclude Include="src\StorageIterator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="View.h">
+    <ClInclude Include="src\View.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="src\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include=".gitmodules" />
+    <None Include="UpdateSubMods.bat" />
+    <None Include="AddSubMods.bat">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

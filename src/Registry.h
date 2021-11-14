@@ -11,7 +11,7 @@
 #include "Types.h"
 #include "View.h"
 
-namespace ecs
+namespace tent
 {
 	//template<std::size_t NumberOfComponents>
 	class Registry
@@ -250,7 +250,7 @@ namespace ecs
 		template<typename Component>
 		Component& get(Entity& e)
 		{
-			std::size_t index = TypeData<Component>::value();
+			std::size_t index = TypeIndex_v<Component>;
 			ASSERT_FATAL(DEFAULT_LOGGABLE, (index < sparseSets.size()), "Index out of bounds or argument e is not the correct type.");
 			return static_cast<storageType<Component>*>(sparseSets[index].sparseSet.get())->get(e);
 		}
@@ -311,7 +311,7 @@ namespace ecs
 		template<typename Component>
 		std::size_t index()
 		{
-			return TypeData<Component>::value();
+			return TypeIndex_v<Component>;
 		}
 
 		/*

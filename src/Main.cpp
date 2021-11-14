@@ -5,7 +5,7 @@
 #include "Registry.h"
 #include "View.h"
 
-using namespace ecs;
+using namespace tent;
 
 struct TestComponentOne
 {

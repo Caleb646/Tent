@@ -3,7 +3,7 @@
 #include <iterator>
 
 
-namespace ecs
+namespace tent
 {
     template<typename Container>
     struct SparseSetIterator

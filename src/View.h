@@ -5,7 +5,7 @@
 #include <functional>
 #include <iostream>
 
-namespace ecs
+namespace tent
 {
 
 	/*
@@ -41,11 +41,10 @@ namespace ecs
 		pointer operator->() { return &*start; }
 		ViewIterator& operator++()
 		{ 
-			auto& curr = *++start;
-			while (!view->exists(curr) && ++start != end)
-			{
-				curr = *start;
-			}
+			//check that were not at the end if not make sure entity exists
+			//else keep iterator through the entities until you reach the end of
+			//of the iterator or that entity exists.
+			while (++start != end && !view->exists(*start)) {}
 			return *this;
 		}
 
@@ -153,7 +152,7 @@ namespace ecs
 		template<typename Component>
 		std::size_t getComponentIndex()
 		{
-			return sparse[TypeData<Component>::value()];
+			return sparse[TypeIndex_v<Component>];
 		}
 
 	public:
