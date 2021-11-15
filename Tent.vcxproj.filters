@@ -53,5 +53,10 @@
     <None Include="AddSubMods.bat">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="lib\Tent.idb" />
+    <None Include="lib\Tent.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\Tent.lib" />
   </ItemGroup>
 </Project>
