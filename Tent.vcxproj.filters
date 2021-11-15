@@ -15,6 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include=".gitmodules" />
+    <None Include="AddSubMods.bat">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="UpdateSubMods.bat">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ComponentStorage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="src\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -24,13 +43,10 @@
     <ClInclude Include="src\SparseSet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ComponentStorage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\StorageIterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\View.h">
@@ -39,24 +55,5 @@
     <ClInclude Include="Tent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include=".gitattributes" />
-    <None Include=".gitignore" />
-    <None Include=".gitmodules" />
-    <None Include="UpdateSubMods.bat" />
-    <None Include="AddSubMods.bat">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="lib\Tent.idb" />
-    <None Include="lib\Tent.pdb" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="lib\Tent.lib" />
   </ItemGroup>
 </Project>
