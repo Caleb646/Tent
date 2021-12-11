@@ -145,7 +145,7 @@ namespace tent
 		storageType<Component>* getPool()
 		{
 			std::size_t i{ getComponentIndex<Component>() };
-			ASSERT_FATAL(DEFAULT_LOGGABLE, (i < pools.size()), "Index is out of bounds");
+			ASSERT_FATAL(i < pools.size(), "Index is out of bounds");
 			return static_cast<storageType<Component>*>(pools[i]);
 		}
 

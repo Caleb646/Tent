@@ -40,7 +40,7 @@ namespace tent
 		{
 			if (baseStorageType::exists(e))
 			{
-				LOG_WARNING(DEFAULT_LOGGABLE, "Trying to add a duplicate component to entity.");
+				LOG_WARNING("Trying to add a duplicate component to entity.");
 				return;
 			}
 			baseStorageType::push(e);
@@ -62,7 +62,7 @@ namespace tent
 		{
 			if (baseStorageType::exists(e))
 			{
-				LOG_WARNING(DEFAULT_LOGGABLE, "Trying to add a duplicate component to entity.");
+				LOG_WARNING("Trying to add a duplicate component to entity.");
 				return;
 			}
 			baseStorageType::push(e);

@@ -57,7 +57,7 @@ namespace tent
 		template<typename Component>
 		storageType<Component>* getOrCreatePool(std::size_t index)
 		{
-			ASSERT_FATAL(DEFAULT_LOGGABLE, (index < numberOfComponents), "More components than the Registry allows.");
+			ASSERT_FATAL(index < numberOfComponents, "More components than the Registry allows.");
 			if (index >= sparseSets.size())
 			{
 				sparseSets.resize(index + 1u);
@@ -79,7 +79,7 @@ namespace tent
 		*/
 		underlyingStorageType* getUnderlyingPool(std::size_t index)
 		{
-			ASSERT_FATAL(DEFAULT_LOGGABLE, (index < numberOfComponents && index < sparseSets.size()), "More components than the Registry allows.");
+			ASSERT_FATAL(index < numberOfComponents && index < sparseSets.size(), "More components than the Registry allows.");
 			return sparseSets[index].sparseSet.get();
 		}
 
@@ -251,7 +251,7 @@ namespace tent
 		Component& get(Entity& e)
 		{
 			std::size_t index = TypeIndex_v<Component>;
-			ASSERT_FATAL(DEFAULT_LOGGABLE, (index < sparseSets.size()), "Index out of bounds or argument e is not the correct type.");
+			ASSERT_FATAL(index < sparseSets.size(), "Index out of bounds or argument e is not the correct type.");
 			return static_cast<storageType<Component>*>(sparseSets[index].sparseSet.get())->get(e);
 		}
 
@@ -262,7 +262,7 @@ namespace tent
 		*/
 		void kill(Entity& e)
 		{
-			ASSERT_ERROR(DEFAULT_LOGGABLE, exists(e), "Entity does not exist.");
+			ASSERT_ERROR(exists(e), "Entity does not exist.");
 			for (auto& sparseSet : sparseSets)
 			{
 				auto&& sp = sparseSet;

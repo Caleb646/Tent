@@ -44,7 +44,7 @@ namespace tent
 			//if entity is not null return false else continue on
 			if (getEntityID(e) == ENTITY_NULL_ID)
 			{
-				LOG_WARNING(DEFAULT_LOGGABLE, "Attempting to add a null entity.");
+				LOG_WARNING("Attempting to add a null entity.");
 				return;
 			}
 
@@ -58,12 +58,12 @@ namespace tent
 			//and the entity at that index.
 			if (index != ENTITY_NULL_ID)
 			{
-				ASSERT_FATAL(DEFAULT_LOGGABLE, index < dense.size(), "Index is out of bounds.");
+				ASSERT_FATAL(index < dense.size(), "Index is out of bounds.");
 				//if the generations are the same 
 				//the entities are the same so no reason to add it.
 				if (getEntityGeneration(e) == getEntityGeneration(e))
 				{
-					LOG_WARNING(DEFAULT_LOGGABLE, "Attempting to add a duplicate entity.");
+					LOG_WARNING("Attempting to add a duplicate entity.");
 					return;
 				}
 			}
@@ -145,19 +145,19 @@ namespace tent
 
 		size_type index(value_type& e)
 		{
-			ASSERT_ERROR(DEFAULT_LOGGABLE, exists(e), "Entity does not exist.");
+			ASSERT_ERROR(exists(e), "Entity does not exist.");
 			return sparse[getEntityIndex(e)];
 		}
 
 		value_type& at(size_type denseI)
 		{
-			ASSERT_ERROR(DEFAULT_LOGGABLE, denseI < dense.size(), "Index is out of bounds.");
+			ASSERT_ERROR(denseI < dense.size(), "Index is out of bounds.");
 			return dense.at(denseI);
 		}
 
 		value_type& get(value_type& e)
 		{
-			ASSERT_ERROR(DEFAULT_LOGGABLE, exists(e), "Entity does not exist.");
+			ASSERT_ERROR(exists(e), "Entity does not exist.");
 			return dense[sparse[getEntityIndex(e)]];
 		}
 
